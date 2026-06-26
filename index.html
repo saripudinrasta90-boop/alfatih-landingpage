@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT Alfatih Mitra Sentosa - Penyedia Tenaga Kerja &amp; SDM Operasional Terintegrasi</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            navy: '#0A1D37',
+                            blue: '#1A3E6C',
+                            accent: '#F3A812', /* Premium Gold */
+                            accentHover: '#D48E06',
+                            cream: '#F4F7FC',
+                            lightBlue: '#B0C4DE',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(10, 29, 55, 0.96) 0%, rgba(26, 62, 108, 0.88) 100%);
+        }
+        .card-shadow {
+            box-shadow: 0 10px 30px -5px rgba(10, 29, 55, 0.05);
+        }
+        .badge-pulse::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: inherit;
+            border-radius: inherit;
+            animation: pulse-ring 1.5s cubic-bezier(0.215, 0.610, 0.355, 1) infinite;
+        }
+        @keyframes pulse-ring {
+            0% { transform: scale(0.95); opacity: 0.8; }
+            100% { transform: scale(1.3); opacity: 0; }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased overflow-x-hidden">
+
+    <!-- STICKY HEADER -->
+    <header class="sticky top-0 z-50 bg-brand-navy/95 backdrop-blur-md text-white border-b border-white/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between py-3 min-h-[5.5rem]">
+                <!-- Logo & Brand Name (Adjusted size to be compact and elegant with its original styling) -->
+                <a href="#" class="flex items-center space-x-3.5 hover:opacity-95 transition-opacity duration-200">
+                    <div class="bg-white p-1 rounded-xl shadow-md flex items-center justify-center">
+                        <img src="https://res.cloudinary.com/dxvvz7anw/image/upload/v1782403191/copy_of_7ea6f5b6-55a4-4bfb-a7ac-6d506cb3254d_dzjwuo.jpg" 
+                             alt="Logo PT Alfatih Mitra Sentosa" 
+                             class="h-10 w-10 sm:h-12 sm:w-12 object-contain rounded-lg"
+                             onerror="this.onerror=null; this.src='https://placehold.co/120x120/FFFFFF/0A1D37?text=AMS';">
+                    </div>
+                    <div>
+                        <span class="block text-sm sm:text-lg font-black tracking-wider leading-none">PT ALFATIH</span>
+                        <span class="block text-[9px] sm:text-[11px] text-brand-lightBlue uppercase tracking-widest mt-1 font-bold">Mitra Sentosa</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <nav class="hidden md:flex space-x-8 text-sm font-semibold">
+                    <a href="#tentang" class="text-white/80 hover:text-brand-accent transition-colors duration-200">Tentang Kami</a>
+                    <a href="#kegiatan-usaha" class="text-white/80 hover:text-brand-accent transition-colors duration-200">Kegiatan Usaha</a>
+                    <a href="#keunggulan" class="text-white/80 hover:text-brand-accent transition-colors duration-200">Keunggulan Geografis</a>
+                    <a href="#kalkulator" class="text-white/80 hover:text-brand-accent transition-colors duration-200">Estimator SDM</a>
+                    <a href="#kontak" class="text-white/80 hover:text-brand-accent transition-colors duration-200">Hubungi Kami</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <div class="hidden lg:block">
+                    <a href="https://wa.me/6281973502436?text=Halo%20PT%20Alfatih%20Mitra%20Sentosa,%20saya%20ingin%20berkonsultasi%20mengenai%20kebutuhan%20tenaga%20kerja%20perusahaan%20kami." target="_blank" class="bg-brand-accent hover:bg-brand-accentHover text-brand-navy font-bold px-5 py-2.5 rounded-lg transition-all duration-200 text-sm shadow-md inline-flex items-center space-x-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Konsultasi Cepat</span>
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" type="button" class="text-white hover:text-brand-accent focus:outline-none p-2" aria-label="Toggle Menu">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-navy border-t border-white/10">
+            <div class="px-2 pt-2 pb-4 space-y-1 sm:px-3 text-center">
+                <a href="#tentang" class="block px-3 py-3 rounded-md text-base font-semibold text-white/90 hover:bg-brand-blue/50 hover:text-brand-accent transition">Tentang Kami</a>
+                <a href="#kegiatan-usaha" class="block px-3 py-3 rounded-md text-base font-semibold text-white/90 hover:bg-brand-blue/50 hover:text-brand-accent transition">Kegiatan Usaha</a>
+                <a href="#keunggulan" class="block px-3 py-3 rounded-md text-base font-semibold text-white/90 hover:bg-brand-blue/50 hover:text-brand-accent transition">Keunggulan Geografis</a>
+                <a href="#kalkulator" class="block px-3 py-3 rounded-md text-base font-semibold text-white/90 hover:bg-brand-blue/50 hover:text-brand-accent transition">Estimator SDM</a>
+                <a href="#kontak" class="block px-3 py-3 rounded-md text-base font-semibold text-white/90 hover:bg-brand-blue/50 hover:text-brand-accent transition">Kontak &amp; Lokasi</a>
+                <div class="pt-4 pb-2 border-t border-white/10">
+                    <a href="https://wa.me/6281973502436?text=Halo%20PT%20Alfatih%20Mitra%20Sentosa,%20saya%20tertarik%20bekerja%20sama." target="_blank" class="mx-auto max-w-xs bg-brand-accent hover:bg-brand-accentHover text-brand-navy font-bold py-3 px-5 rounded-xl block text-center shadow-lg transition duration-200 flex justify-center items-center space-x-2">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <span>WhatsApp Quick Connect</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative bg-brand-navy text-white overflow-hidden min-h-[90vh] flex items-center">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=2070&auto=format&fit=crop" 
+                 alt="Terminal Logistik Indonesia" 
+                 class="w-full h-full object-cover object-center transform scale-105 filter brightness-75"
+                 onerror="this.onerror=null; this.src='https://placehold.co/1920x1080/0A1D37/FFFFFF?text=Industrial+Logistics';">
+            <div class="absolute inset-0 hero-gradient"></div>
+        </div>
+
+        <!-- Decorative Floating Elements -->
+        <div class="absolute right-0 bottom-0 opacity-5 pointer-events-none hidden lg:block">
+            <i class="fa-solid fa-users text-[26rem] text-brand-lightBlue -mb-20 -mr-16"></i>
+        </div>
+
+        <!-- Content Container -->
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <!-- Text Block -->
+                <div class="lg:col-span-8 space-y-6 text-left">
+                    <div class="inline-flex items-center space-x-2 bg-brand-accent/20 text-brand-accent border border-brand-accent/30 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold tracking-wider uppercase backdrop-blur-sm">
+                        <span class="w-2.5 h-2.5 rounded-full bg-brand-accent relative flex"><span class="badge-pulse absolute inline-flex h-full w-full rounded-full bg-brand-accent opacity-75"></span></span>
+                        <span>Penyedia SDM &amp; Tenaga Kerja Operasional Terbaik</span>
+                    </div>
+                    
+                    <h1 class="text-3xl sm:text-4xl lg:text-5.5xl font-black tracking-tight leading-tight lg:leading-tight">
+                        Solusi Terintegrasi Penyediaan <span class="text-brand-accent underline decoration-wavy decoration-1 underline-offset-8">Tenaga Kerja</span> &amp; Layanan Penunjang Logistik Pelabuhan
+                    </h1>
+                    
+                    <p class="text-base sm:text-lg lg:text-xl text-slate-200 font-normal leading-relaxed max-w-3xl">
+                        PT Alfatih Mitra Sentosa hadir menyediakan SDM terampil, manajemen TKBM profesional, dan armada transportasi andal untuk mendukung kelancaran operasional bisnis Anda di wilayah DKI Jakarta dan sekitarnya.
+                    </p>
+
+                    <!-- CTAs with Dynamic Contacts -->
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a href="#kegiatan-usaha" class="bg-brand-accent hover:bg-brand-accentHover text-brand-navy text-center font-bold px-8 py-4 rounded-xl transition duration-300 shadow-xl shadow-brand-accent/20 flex items-center justify-center space-x-2 transform hover:-translate-y-1">
+                            <span>Lihat Kegiatan Usaha</span>
+                            <i class="fa-solid fa-arrow-down"></i>
+                        </a>
+                        <div class="grid grid-cols-2 gap-2 sm:flex sm:gap-3">
+                            <a href="https://wa.me/6288210549907?text=Halo%20PT%20Alfatih%20Mitra%20Sentosa,%20saya%20ingin%20berkonsultasi%20mengenai%20kebutuhan%20Driver%20dan%20Tenaga%20Kerja%20Lepas%20(Freelance/DW)." target="_blank" class="bg-brand-blue hover:bg-slate-800 text-white border border-brand-lightBlue/30 hover:border-brand-accent text-center text-xs sm:text-sm font-semibold px-4 py-3 rounded-xl transition duration-300 flex flex-col sm:flex-row items-center justify-center gap-1.5 transform hover:-translate-y-1">
+                                <i class="fa-brands fa-whatsapp text-lg text-brand-accent"></i>
+                                <span class="text-center">Hotline 1 (Logistik)</span>
+                            </a>
+                            <a href="https://wa.me/6281973502436?text=Halo%20PT%20Alfatih%20Mitra%20Sentosa,%20saya%20ingin%20mengajukan%20kerjasama%20penyediaan%20Karyawan%20Admin,%20Cleaning,%20atau%20Produksi." target="_blank" class="bg-brand-blue hover:bg-slate-800 text-white border border-brand-lightBlue/30 hover:border-brand-accent text-center text-xs sm:text-sm font-semibold px-4 py-3 rounded-xl transition duration-300 flex flex-col sm:flex-row items-center justify-center gap-1.5 transform hover:-translate-y-1">
+                                <i class="fa-brands fa-whatsapp text-lg text-brand-accent"></i>
+                                <span class="text-center">Hotline 2 (Kemitraan)</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Feature Box -->
+                <div class="lg:col-span-4 hidden lg:block">
+                    <div class="bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-3xl card-shadow space-y-6">
+                        <h3 class="text-lg font-bold text-white flex items-center space-x-2">
+                            <i class="fa-solid fa-handshake text-brand-accent"></i>
+                            <span>Komitmen Kemitraan</span>
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-3">
+                                <div class="bg-brand-accent/20 p-2 rounded-lg mt-1">
+                                    <i class="fa-solid fa-circle-check text-brand-accent"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-white">Legalitas Resmi</h4>
+                                    <p class="text-xs text-slate-300">Entitas terdaftar dengan perizinan lengkap untuk mendukung operasional Anda secara aman.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <div class="bg-brand-accent/20 p-2 rounded-lg mt-1">
+                                    <i class="fa-solid fa-users-gear text-brand-accent"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-white">Manajemen Berpengalaman</h4>
+                                    <p class="text-xs text-slate-300">Kami menjamin kedisiplinan, kelaikan kerja, dan koordinasi lapangan yang responsif.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROFILE & GEOGRAPHIC SUMMARY -->
+    <section id="tentang" class="py-16 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Image Section -->
+                <div class="relative">
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="https://images.unsplash.com/photo-1521737711867-e3b904737d88?q=80&w=1974&auto=format&fit=crop" 
+                             alt="Profesional Staf Admin" 
+                             class="rounded-2xl shadow-md h-48 sm:h-64 w-full object-cover transform hover:scale-102 transition duration-300"
+                             onerror="this.onerror=null; this.src='https://placehold.co/400x300/1A3E6C/FFFFFF?text=Staff+Office';">
+                        <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=2070&auto=format&fit=crop" 
+                             alt="Driver Logistik Pelabuhan" 
+                             class="rounded-2xl shadow-md h-48 sm:h-64 w-full object-cover transform hover:scale-102 transition duration-300 mt-8"
+                             onerror="this.onerror=null; this.src='https://placehold.co/400x300/0A1D37/FFFFFF?text=Logistics+Driver';">
+                    </div>
+                    <!-- Proximity Badge -->
+                    <div class="absolute -bottom-6 -left-6 sm:bottom-4 sm:left-4 bg-brand-navy text-white p-6 rounded-2xl shadow-xl border border-brand-accent/20 max-w-xs hidden sm:block">
+                        <div class="text-3xl font-extrabold text-brand-accent mb-1">Cilincing, Jakarta</div>
+                        <p class="text-xs text-slate-300">Kawasan strategis penyangga operasional Pelabuhan Utama Tanjung Priok.</p>
+                    </div>
+                </div>
+
+                <!-- Text Info -->
+                <div class="space-y-6">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-brand-blue flex items-center gap-2">
+                        <span class="w-8 h-0.5 bg-brand-accent inline-block"></span>
+                        <span>PROFIL PT ALFATIH MITRA SENTOSA</span>
+                    </h2>
+                    <h3 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-brand-navy leading-tight">
+                        Mitra Strategis Penyediaan Tenaga Kerja &amp; SDM Sektor Industri
+                    </h3>
+                    <p class="text-base text-slate-600 leading-relaxed">
+                        Kami adalah entitas profesional terdaftar yang berdedikasi tinggi untuk memberikan solusi efisiensi di berbagai bidang ketenagakerjaan. Berpusat di daerah strategis Cilincing, Jakarta Utara, kami melayani pemenuhan kebutuhan operasional harian maupun jangka panjang bagi mitra bisnis kami.
+                    </p>
+                    <p class="text-base text-slate-600 leading-relaxed">
+                        Dengan manajemen internal yang berpengalaman, kami fokus mempermudah regulasi SDM internal Anda melalui rekrutmen terstandarisasi, pengawasan kinerja lapangan yang berkala, dan penyediaan armada logistik yang mumpuni.
+                    </p>
+
+                    <!-- Core Strengths -->
+                    <div class="grid grid-cols-3 gap-4 pt-4 text-center">
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-100 hover:bg-brand-cream hover:border-brand-lightBlue/30 transition duration-300">
+                            <i class="fa-solid fa-shield-halved text-2xl text-brand-blue mb-2 block"></i>
+                            <span class="text-xs font-bold text-brand-navy block">Legal &amp; Aman</span>
+                        </div>
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-100 hover:bg-brand-cream hover:border-brand-lightBlue/30 transition duration-300">
+                            <i class="fa-solid fa-bolt text-2xl text-brand-blue mb-2 block"></i>
+                            <span class="text-xs font-bold text-brand-navy block">Respon Cepat</span>
+                        </div>
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-100 hover:bg-brand-cream hover:border-brand-lightBlue/30 transition duration-300">
+                            <i class="fa-solid fa-star text-2xl text-brand-blue mb-2 block"></i>
+                            <span class="text-xs font-bold text-brand-navy block">Kinerja Prima</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KEGIATAN USAHA SECTION -->
+    <section id="kegiatan-usaha" class="py-20 bg-brand-cream/50 border-y border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <div class="inline-block bg-brand-blue/10 text-brand-blue px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase">
+                    Fokus Kegiatan Usaha
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-navy tracking-tight">
+                    Layanan &amp; Kompetensi Utama Kami
+                </h2>
+                <p class="text-slate-600 text-base sm:text-lg">
+                    Kami menghadirkan 5 klasifikasi kegiatan usaha yang siap mendukung efisiensi, produktivitas, serta operasional bisnis dan logistik Anda.
+                </p>
+            </div>
+
+            <!-- Kegiatan Usaha Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Card 1: Cleaning Service/OB -->
+                <div class="bg-white rounded-3xl border border-slate-100 card-shadow flex flex-col justify-between overflow-hidden hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group">
+                    <div>
+                        <!-- Representative Worker Image for Cleaning Service -->
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://res.cloudinary.com/dxvvz7anw/image/upload/v1782406409/copy_of_62aaa1d6-187a-4423-95a2-1a1a4c6e9bda_rftmmd.jpg" 
+                                 alt="Pekerja Cleaning Service & OB Profesional" 
+                                 class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/600x400/1A3E6C/FFFFFF?text=Cleaning+Service+Staff';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                            <span class="absolute top-4 right-4 text-[10px] font-bold px-2.5 py-1 bg-brand-navy/80 text-white rounded-full backdrop-blur-sm tracking-wider uppercase">KBLI 81210</span>
+                        </div>
+                        <div class="p-6 sm:p-8 pb-3">
+                            <div class="flex items-center space-x-2.5 mb-3">
+                                <div class="bg-brand-blue/10 text-brand-blue p-2 rounded-lg">
+                                    <i class="fa-solid fa-broom text-lg"></i>
+                                </div>
+                                <h3 class="text-lg sm:text-xl font-bold text-brand-navy group-hover:text-brand-blue transition duration-200">
+                                    Cleaning Service &amp; Office Boy (OB)
+                                </h3>
+                            </div>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Jasa kebersihan umum profesional untuk gedung perkantoran, fasilitas industri, gudang (warehouse), dan area kerja pelabuhan guna menjamin lingkungan kerja yang bersih, higienis, dan nyaman.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 sm:p-8 pt-0 mt-auto">
+                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                            <span class="text-xs text-brand-blue font-semibold">Kebersihan Gedung &amp; Kantor</span>
+                            <a href="https://wa.me/6281973502436?text=Halo%20PT%20Alfatih%20Mitra%20Sentosa,%20saya%20ingin%20meminta%20penawaran%20mengenai%20Layanan%20Cleaning%20Service%20/%20Office%20Boy%20(OB)." target="_blank" class="text-brand-navy hover:text-brand-accent font-extrabold text-sm inline-flex items-center space-x-1.5 transition">
+                                <span>Hubungi Ops</span>
+                                <i class="fa-solid fa-arrow-right-long text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Freelance/DW Logistic -->
+                <div class="bg-white rounded-3xl border border-slate-100 card-shadow flex flex-col justify-between overflow-hidden hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group">
+                    <div>
+                        <!-- Representative Worker Image for Daily Worker Logistic -->
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop" 
+                                 alt="Daily Worker Logistic & TKBM Pelabuhan" 
+                                 class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/600x400/0A1D37/FFFFFF?text=Daily+Worker+Staff';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                            <span class="absolute top-4 right-4 text-[10px] font-bold px-2.5 py-1 bg-brand-navy/80 text-white rounded-full backdrop-blur-sm tracking-wider uppercase">KBLI 78200 &amp; 52299</span>
+                        </div>
+                        <div class="p-6 sm:p-8 pb-3">
+                            <div class="flex items-center space-x-2.5 mb-3">
+                                <div class="bg-brand-blue/10 text-brand-blue p-2 rounded-lg">
+                                    <i class="fa-solid fa-people-carry-box text-lg"></i>
+                                </div>
+                                <h3 class="text-lg sm:text-xl font-bold text-brand-navy group-hover:text-brand-blue transition duration-200">
+                                    Freelance / DW Logistic
+                                </h3>
+                            </div>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Penyediaan Tenaga Kerja Bongkar Muat (TKBM) dan pekerja harian lepas penunjang logistik yang siap bekerja sigap menangani kargo umum, curah, maupun kontainer secara aman di area gudang &amp; pelabuhan.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 sm:p-8 pt-0 mt-auto">
+                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                            <span class="text-xs text-brand-blue font-semibold">Tenaga Harian Fleksibel</span>
+                            <a href="https://wa.me/6288210549907?text=Halo%20PT%20Alfatih%20Mitra%20Sentosa,%20saya%20ingin%20meminta%20penawaran%20mengenai%20Layanan%20Freelance%20/%20Daily%20Worker%20(DW)%20Logistic." target="_blank" class="text-brand-navy hover:text-brand-accent font-extrabold text-sm inline-flex items-center space-x-1.5 transition">
+                                <span>Hubungi Ops</span>
+                                <i class="fa-solid fa-arrow-right-long text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Karyawan Admin -->
+                <div class="bg-white rounded-3xl border border-slate-100 card-shadow flex flex-col justify-between overflow-hidden hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group">
+                    <div>
+                        <!-- Representative Worker Image for Admin Employee -->
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://res.cloudinary.com/dxvvz7anw/image/upload/v1782405649/copy_of_e7a2a2d7-acd8-49a4-b162-fc6c14b657a8_hcacft.jpg" 
+                                 alt="Karyawan Administrasi & Staf Kantor" 
+                                 class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/600x400/1A3E6C/FFFFFF?text=Office+Admin';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                            <span class="absolute top-4 right-4 text-[10px] font-bold px-2.5 py-1 bg-brand-navy/80 text-white rounded-full backdrop-blur-sm tracking-wider uppercase">KBLI 82100</span>
+                        </div>
+                        <div class="p-6 sm:p-8 pb-3">
+                            <div class="flex items-center space-x-2.5 mb-3">
+                                <div class="bg-brand-blue/10 text-brand-blue p-2 rounded-lg">
+                                    <i class="fa-solid fa-user-tie text-lg"></i>
+                                </div>
+                                <h3 class="text-lg sm:text-xl font-bold text-brand-navy group-hover:text-brand-blue transition duration-200">
+                                    Penyediaan Karyawan Admin
+                                </h3>
+                            </div>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Penyaluran staf administratif terampil, sekretaris kantor, resepsionis, staf pembukuan, serta admin logistik (gudang/inventory) yang ahli dalam mengelola dokumentasi serta laporan berkala.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 sm:p-8 pt-0 mt-auto">
+                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                            <span class="text-xs text-brand-blue font-semibold">Staf Administratif Terlatih</span>
+                            <a href="https://wa.me/6281973502436?text=Halo%20PT%20Alfatih%20Mitra%20Sentosa,%20saya%20ingin%20meminta%20penawaran%20mengenai%20Penyediaan%20Karyawan%20Administrasi%20(Admin)." target="_blank" class="text-brand-navy hover:text-brand-accent font-extrabold text-sm inline-flex items-center space-x-1.5 transition">
+                                <span>Hubungi Ops</span>
+                                <i class="fa-solid fa-arrow-right-long text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: Driver Logistic -->
+                <div class="bg-white rounded-3xl border border-slate-100 card-shadow flex flex-col justify-between overflow-hidden hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group">
+                    <div>
+                        <!-- Representative Worker Image for Logistic Driver -->
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://res.cloudinary.com/dxvvz7anw/image/upload/v1782405820/copy_of_407b4acf-2686-48b4-bced-2390614d4040_yhyfmh.jpg" 
+                                 alt="Driver Armada Logistik & Distribusi" 
+                                 class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/600x400/0A1D37/FFFFFF?text=Logistic+Driver';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                            <span class="absolute top-4 right-4 text-[10px] font-bold px-2.5 py-1 bg-brand-navy/80 text-white rounded-full backdrop-blur-sm tracking-wider uppercase">KBLI 49231</span>
+                        </div>
+                        <div class="p-6 sm:p-8 pb-3">
+                            <div class="flex items-center space-x-2.5 mb-3">
+                                <div class="bg-brand-blue/10 text-brand-blue p-2 rounded-lg">
+                                    <i class="fa-solid fa-truck-moving text-lg"></i>
+                                </div>
+                                <h3 class="text-lg sm:text-xl font-bold text-brand-navy group-hover:text-brand-blue transition duration-200">
+                                    Driver Logistic &amp; Distribusi
+                                </h3>
+                            </div>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Pengadaan sopir armada logistik profesional bersertifikat (SIM B1/B2 Umum) serta driver dinas operasional kantor berpengalaman yang andal menjangkau pengantaran rute pelabuhan dan industri.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 sm:p-8 pt-0 mt-auto">
+                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                            <span class="text-xs text-brand-blue font-semibold">Driver Truk &amp; Angkutan</span>
+                            <a href="https://wa.me/6288210549907?text=Halo%20PT%20Alfatih%20Mitra%20Sentosa,%20saya%20ingin%20meminta%20penawaran%20mengenai%20Penyediaan%20Driver%20Logistic." target="_blank" class="text-brand-navy hover:text-brand-accent font-extrabold text-sm inline-flex items-center space-x-1.5 transition">
+                                <span>Hubungi Ops</span>
+                                <i class="fa-solid fa-arrow-right-long text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5: Karyawan Produksi/Packing -->
+                <div class="bg-white rounded-3xl border border-slate-100 card-shadow flex flex-col justify-between overflow-hidden hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group">
+                    <div>
+                        <!-- Representative Worker Image for Production Employee -->
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1616401784845-180882ba9ba8?q=80&w=800&auto=format&fit=crop" 
+                                 alt="Karyawan Produksi, Pabrik &amp; Gudang" 
+                                 class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/600x400/1A3E6C/FFFFFF?text=Production+Staff';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                            <span class="absolute top-4 right-4 text-[10px] font-bold px-2.5 py-1 bg-brand-navy/80 text-white rounded-full backdrop-blur-sm tracking-wider uppercase">Operasional</span>
+                        </div>
+                        <div class="p-6 sm:p-8 pb-3">
+                            <div class="flex items-center space-x-2.5 mb-3">
+                                <div class="bg-brand-blue/10 text-brand-blue p-2 rounded-lg">
+                                    <i class="fa-solid fa-box-open text-lg"></i>
+                                </div>
+                                <h3 class="text-lg sm:text-xl font-bold text-brand-navy group-hover:text-brand-blue transition duration-200">
+                                    Karyawan Produksi &amp; Packing
+                                </h3>
+                            </div>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Pekerja lini perakitan pabrik, petugas sortasi, pelabelan barang, dan staf pengemasan (packing) industri yang terbiasa bekerja teliti demi memacu kelancaran sirkulasi distribusi pergudangan Anda.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 sm:p-8 pt-0 mt-auto">
+                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                            <span class="text-xs text-brand-blue font-semibold">Operator Pabrik &amp; Gudang</span>
+                            <a href="https://wa.me/6281973502436?text=Halo%20PT%20Alfatih%20Mitra%20Sentosa,%20saya%20ingin%20meminta%20penawaran%20mengenai%20Penyediaan%20Karyawan%20Produksi%20/%20Packing." target="_blank" class="text-brand-navy hover:text-brand-accent font-extrabold text-sm inline-flex items-center space-x-1.5 transition">
+                                <span>Hubungi Ops</span>
+                                <i class="fa-solid fa-arrow-right-long text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call to Action Box -->
+                <div class="bg-brand-navy rounded-3xl border border-brand-blue p-8 card-shadow flex flex-col justify-between text-white relative overflow-hidden group">
+                    <div class="absolute right-0 bottom-0 text-white/5 transform translate-x-4 translate-y-4">
+                        <i class="fa-solid fa-circle-nodes text-9xl"></i>
+                    </div>
+                    <div class="relative z-10">
+                        <span class="inline-block bg-brand-accent/20 text-brand-accent px-3.5 py-1 rounded-full text-xxs font-extrabold tracking-widest uppercase mb-4">SISTEM OUTSOURCING CEPAT</span>
+                        <h3 class="text-2xl font-black text-white mb-3">Butuh Alokasi SDM Kustom Lainnya?</h3>
+                        <p class="text-brand-lightBlue text-xs sm:text-sm leading-relaxed mb-6">
+                            Kami selalu siap menyusun sistem pengawasan khusus untuk disesuaikan dengan volume produksi maupun sistem pergudangan perusahaan Anda secara instan.
+                        </p>
+                    </div>
+                    <div class="space-y-3 z-10">
+                        <a href="https://wa.me/6281973502436?text=Halo%20PT%20Alfatih%20Mitra%20Sentosa,%20saya%20ingin%20mengajukan%20penawaran%20kerja%20sama%20dan%20kemitraan%20outsourcing%20untuk%20perusahaan." target="_blank" class="w-full bg-brand-accent hover:bg-brand-accentHover text-brand-navy font-extrabold text-sm py-3.5 rounded-xl block text-center shadow-lg transition duration-200">
+                            <i class="fa-brands fa-whatsapp text-lg mr-2"></i>Hubungi Hotline Kemitraan
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- GEOGRAPHIC ADVANTAGE -->
+    <section id="keunggulan" class="py-20 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Details Info -->
+                <div class="lg:col-span-6 space-y-6">
+                    <div class="inline-flex items-center space-x-2 bg-brand-blue/10 text-brand-blue px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase">
+                        <i class="fa-solid fa-compass text-sm text-brand-accent"></i>
+                        <span>Akses Strategis Pelabuhan</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-navy leading-tight">
+                        Cilincing, Jakarta Utara:<br>Gerbang Utama Efisiensi Logistik
+                    </h2>
+                    <p class="text-slate-600 leading-relaxed text-base">
+                        Kantor operasional dan administrasi kami berlokasi strategis di <strong>Cilincing, Jakarta Utara</strong>. Kedekatan yang luar biasa dekat dengan <strong>Pelabuhan Tanjung Priok</strong> memberikan keunggulan geografis yang signifikan dalam meminimalkan hambatan jarak dan waktu:
+                    </p>
+
+                    <!-- Bullet Features -->
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-brand-accent/10 text-brand-accent p-2.5 rounded-xl flex-shrink-0 mt-0.5">
+                                <i class="fa-solid fa-bolt text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-navy">Mobilisasi Super Cepat</h4>
+                                <p class="text-sm text-slate-500">Regu Freelance/Daily Worker, Driver, dan SDM lapangan kami dapat bergerak menuju dermaga pelabuhan dalam hitungan menit.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-brand-accent/10 text-brand-accent p-2.5 rounded-xl flex-shrink-0 mt-0.5">
+                                <i class="fa-solid fa-file-shield text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-navy">Koordinasi Administrasi Terarah</h4>
+                                <p class="text-sm text-slate-500">Kantor Administrasi Terpusat kami berdimensi 4 &times; 7 m², siap menangani rekrutmen cepat, penyaringan berkas, dan kontrak kerja sama fisik secara efisien.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Visual Map & Distance Indicator -->
+                <div class="lg:col-span-6">
+                    <div class="bg-brand-cream border border-brand-lightBlue/20 rounded-3xl p-6 sm:p-8 card-shadow space-y-6">
+                        <!-- Port Proximity Illustration -->
+                        <div class="bg-white rounded-2xl border border-slate-100 p-6 flex flex-col justify-between relative overflow-hidden">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-xs font-bold text-slate-400">PETA KONEKTIVITAS INTEGRASI</span>
+                                <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full flex items-center gap-1">
+                                    <span class="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-ping"></span> Real-time Hub
+                                </span>
+                            </div>
+
+                            <!-- Simplified Schematic Layout -->
+                            <div class="relative py-8 flex flex-col items-center">
+                                <div class="absolute inset-x-0 top-1/2 -translate-y-1/2 border-t-2 border-dashed border-brand-blue/30 z-0"></div>
+                                <div class="grid grid-cols-3 w-full relative z-10 text-center">
+                                    <!-- Port Node -->
+                                    <div class="flex flex-col items-center">
+                                        <div class="bg-brand-blue text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg">
+                                            <i class="fa-solid fa-anchor text-lg"></i>
+                                        </div>
+                                        <span class="text-xs font-bold text-brand-navy mt-2 block">Pelabuhan Tanjung Priok</span>
+                                        <span class="text-xxs text-slate-400 font-medium">Hub Utama</span>
+                                    </div>
+                                    <!-- Connection Indicator -->
+                                    <div class="flex flex-col items-center justify-center">
+                                        <div class="bg-brand-accent text-brand-navy text-xxs px-2.5 py-1 rounded-full font-extrabold shadow-sm border border-white">
+                                            ± 5-10 Menit
+                                        </div>
+                                        <span class="text-[10px] text-brand-blue font-semibold mt-1">Akses Langsung</span>
+                                    </div>
+                                    <!-- PT Alfatih Node -->
+                                    <div class="flex flex-col items-center">
+                                        <div class="bg-brand-accent text-brand-navy w-14 h-14 rounded-full flex items-center justify-center shadow-lg border-2 border-brand-navy">
+                                            <i class="fa-solid fa-building-user text-lg"></i>
+                                        </div>
+                                        <span class="text-xs font-extrabold text-brand-navy mt-2 block">PT ALFATIH MITRA SENTOSA</span>
+                                        <span class="text-xxs text-slate-500 font-bold">Cilincing</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Direct Address Spotlight Card -->
+                        <div class="bg-brand-navy text-white rounded-2xl p-6 relative overflow-hidden">
+                            <h4 class="text-sm font-extrabold text-brand-accent tracking-wider uppercase mb-3 flex items-center gap-1.5">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                                <span>Alamat Kantor Administrasi Terpusat</span>
+                            </h4>
+                            <p class="text-sm text-slate-300 leading-relaxed mb-4">
+                                Jl. Bulak cabe No.60, RT 07/RW 06, Kel. Cilincing, Kec. Cilincing, Jakarta Utara, DKI Jakarta, 14120. (Dimensi Kantor: 4 &times; 7 m²)
+                            </p>
+                            <div class="flex items-center space-x-6 text-xs text-brand-lightBlue font-semibold border-t border-white/10 pt-4">
+                                <div>
+                                    <span class="block text-slate-400 text-[10px] uppercase tracking-wide">Dimensi Kantor</span>
+                                    <span class="text-brand-accent text-sm font-bold">4 &times; 7 m²</span>
+                                </div>
+                                <div>
+                                    <span class="block text-slate-400 text-[10px] uppercase tracking-wide">Jarak Ke Priok</span>
+                                    <span class="text-brand-accent text-sm font-bold">Sangat Dekat</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE ESTIMATOR SECTION -->
+    <section id="kalkulator" class="py-20 bg-brand-navy text-white relative overflow-hidden">
+        <!-- Background decorative blur shapes -->
+        <div class="absolute -top-12 -left-12 w-64 h-64 bg-brand-blue/30 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-12 -right-12 w-64 h-64 bg-brand-blue/30 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-2xl mx-auto mb-12 space-y-4">
+                <span class="text-xs font-extrabold text-brand-accent bg-brand-accent/10 px-4 py-1.5 rounded-full tracking-wider uppercase">SIMULATOR KEBUTUHAN</span>
+                <h2 class="text-3xl font-extrabold tracking-tight">Kalkulator Estimasi Kebutuhan SDM &amp; Logistik</h2>
+                <p class="text-sm text-slate-300">
+                    Gunakan kalkulator interaktif ini untuk memperkirakan alokasi personel dan logistik harian Anda secara mandiri. Kirim ringkasan hasil secara langsung ke WhatsApp resmi kami.
+                </p>
+            </div>
+
+            <!-- Estimator Widget Container -->
+            <div class="bg-white text-slate-800 rounded-3xl p-6 sm:p-10 card-shadow border border-slate-100">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Left Inputs -->
+                    <div class="space-y-6">
+                        <h3 class="font-bold text-brand-navy text-lg border-b border-slate-100 pb-3 flex items-center gap-2">
+                            <i class="fa-solid fa-sliders text-brand-accent"></i>
+                            <span>Atur Kebutuhan Anda</span>
+                        </h3>
+                        
+                        <!-- Daily Worker / Freelance Sliders -->
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center text-sm">
+                                <label for="range-dw" class="font-semibold text-slate-700">Daily Worker / Freelance (Personel)</label>
+                                <span class="bg-brand-cream text-brand-blue font-bold px-2.5 py-0.5 rounded-lg text-xs" id="val-dw">10 Orang</span>
+                            </div>
+                            <input id="range-dw" type="range" min="0" max="100" value="10" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-brand-blue">
+                        </div>
+
+                        <!-- Driver Logistics Sliders -->
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center text-sm">
+                                <label for="range-drivers" class="font-semibold text-slate-700">Driver Logistic / Supir Armada</label>
+                                <span class="bg-brand-cream text-brand-blue font-bold px-2.5 py-0.5 rounded-lg text-xs" id="val-drivers">2 Orang</span>
+                            </div>
+                            <input id="range-drivers" type="range" min="0" max="30" value="2" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-brand-blue">
+                        </div>
+
+                        <!-- Choose Kegiatan Usaha Main Focus -->
+                        <div class="space-y-2">
+                            <label for="select-staff-type" class="block text-sm font-semibold text-slate-700">Kebutuhan Staf Tambahan</label>
+                            <select id="select-staff-type" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue transition">
+                                <option value="Tidak Membutuhkan">Hanya Layanan Logistik Saja</option>
+                                <option value="Karyawan Admin (Staf Kantor)">Karyawan Admin Kantor</option>
+                                <option value="Cleaning Service / OB">Cleaning Service &amp; OB</option>
+                                <option value="Karyawan Produksi / Packing">Karyawan Produksi &amp; Packing Gudang</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Right Summary Breakdown -->
+                    <div class="bg-brand-cream/60 rounded-2xl p-6 flex flex-col justify-between border border-brand-lightBlue/15">
+                        <div class="space-y-4">
+                            <h3 class="font-bold text-brand-navy text-lg border-b border-brand-lightBlue/20 pb-3 flex items-center gap-2">
+                                <i class="fa-solid fa-receipt text-brand-blue"></i>
+                                <span>Ringkasan Estimasi</span>
+                            </h3>
+                            
+                            <div class="space-y-3 text-sm">
+                                <div class="flex justify-between">
+                                    <span class="text-slate-500">Pekerja Freelance / DW:</span>
+                                    <span class="font-bold text-brand-navy" id="summary-dw">10 Personel</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-slate-500">Driver Logistic:</span>
+                                    <span class="font-bold text-brand-navy" id="summary-drivers">2 Personel</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-slate-500">Fokus Staf Tambahan:</span>
+                                    <span class="font-bold text-brand-navy text-right" id="summary-staff-type">Tidak Membutuhkan</span>
+                                </div>
+                                <div class="border-t border-brand-lightBlue/30 pt-3 flex justify-between items-center">
+                                    <span class="text-brand-navy font-bold">Skala Alokasi:</span>
+                                    <span class="bg-emerald-600 text-white font-extrabold text-xs px-3 py-1 rounded-full uppercase" id="summary-scale">Efisien / Kecil</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Submit Buttons -->
+                        <div class="pt-6 space-y-3">
+                            <button id="btn-estimate-wa-1" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 px-4 rounded-xl text-xs sm:text-sm flex items-center justify-center space-x-2 transition shadow-md">
+                                <i class="fa-brands fa-whatsapp text-lg"></i>
+                                <span>Kirim Ops 1 (Logistik &amp; Drivers)</span>
+                            </button>
+                            <button id="btn-estimate-wa-2" class="w-full bg-brand-navy hover:bg-brand-blue text-white font-bold py-3.5 px-4 rounded-xl text-xs sm:text-sm flex items-center justify-center space-x-2 transition shadow-md">
+                                <i class="fa-brands fa-whatsapp text-lg text-brand-accent"></i>
+                                <span>Kirim Ops 2 (Admin, Cleaning, &amp; Produksi)</span>
+                            </button>
+                            <p class="text-[10px] text-center text-slate-400">
+                                *Menekan salah satu tombol akan membuka WhatsApp dengan teks estimasi rapi terformat otomatis.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER / CONTACT SECTION -->
+    <footer id="kontak" class="bg-brand-navy text-white pt-20 pb-8 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 pb-16 border-b border-white/10">
+                
+                <!-- Left Brand Block -->
+                <div class="lg:col-span-4 space-y-6">
+                    <div class="flex items-center space-x-4">
+                        <!-- Standard proportional logo container in footer with original background styling -->
+                        <div class="bg-white p-1.5 rounded-2xl shadow-md flex items-center justify-center">
+                            <img src="https://res.cloudinary.com/dxvvz7anw/image/upload/v1782403191/copy_of_7ea6f5b6-55a4-4bfb-a7ac-6d506cb3254d_dzjwuo.jpg" 
+                                 alt="Logo PT Alfatih Mitra Sentosa" 
+                                 class="h-12 w-12 sm:h-14 sm:w-14 object-contain rounded-xl"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/120x120/FFFFFF/0A1D37?text=AMS';">
+                        </div>
+                        <div>
+                            <span class="block text-xl font-black tracking-wider leading-none">PT ALFATIH</span>
+                            <span class="block text-xs text-brand-lightBlue uppercase tracking-widest mt-1.5 font-bold">Mitra Sentosa</span>
+                        </div>
+                    </div>
+                    
+                    <p class="text-sm text-slate-300 leading-relaxed font-light">
+                        Penyedia tepercaya untuk logistik kepelabuhanan terintegrasi, pengerahan tenaga kerja terampil (Admin, Driver, OB/Cleaning, Daily Worker), serta penyediaan operasional lini produksi di DKI Jakarta.
+                    </p>
+
+                    <!-- Accreditations / Badge Minimalist -->
+                    <div class="bg-brand-blue/35 p-4 rounded-2xl border border-brand-lightBlue/10 flex items-center space-x-3 max-w-sm">
+                        <i class="fa-solid fa-building-user text-brand-accent text-xl"></i>
+                        <div>
+                            <span class="block text-xs text-slate-400">Kantor Administrasi Terpusat</span>
+                            <span class="block text-sm font-bold text-white">Cilincing, Jakarta Utara</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Middle Links Column -->
+                <div class="lg:col-span-3 space-y-6">
+                    <h3 class="text-sm font-bold tracking-widest uppercase text-brand-accent">Pintasan Navigasi</h3>
+                    <ul class="space-y-3.5 text-sm text-slate-300">
+                        <li><a href="#tentang" class="hover:text-brand-accent transition flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-xxs text-brand-accent"></i> Tentang Kami</a></li>
+                        <li><a href="#kegiatan-usaha" class="hover:text-brand-accent transition flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-xxs text-brand-accent"></i> Kegiatan Usaha</a></li>
+                        <li><a href="#keunggulan" class="hover:text-brand-accent transition flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-xxs text-brand-accent"></i> Keunggulan Geografis</a></li>
+                        <li><a href="#kalkulator" class="hover:text-brand-accent transition flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-xxs text-brand-accent"></i> Estimator SDM</a></li>
+                    </ul>
+                </div>
+
+                <!-- Right Contact Block -->
+                <div class="lg:col-span-5 space-y-6">
+                    <h3 class="text-sm font-bold tracking-widest uppercase text-brand-accent">Saluran Komunikasi Resmi</h3>
+                    
+                    <div class="space-y-4">
+                        <!-- Address -->
+                        <div class="flex items-start space-x-3 text-sm text-slate-300">
+                            <i class="fa-solid fa-map-pin text-brand-accent text-lg mt-0.5 flex-shrink-0"></i>
+                            <div>
+                                <span class="block text-white font-semibold">Alamat Kantor:</span>
+                                <span class="text-xs font-light block mt-1">
+                                    Jl. Bulak cabe No.60, RT 07/RW 06, Kel. Cilincing, Kec. Cilincing, Jakarta Utara, DKI Jakarta, 14120. (Dimensi Kantor Administrasi Terpusat: 4 &times; 7 m²)
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Hotline 1 -->
+                        <div class="flex items-center justify-between text-sm text-slate-300 bg-brand-blue/30 p-3.5 rounded-2xl border border-white/5">
+                            <div class="flex items-center space-x-3">
+                                <i class="fa-solid fa-truck text-brand-accent text-lg"></i>
+                                <div>
+                                    <span class="block text-[10px] text-slate-400 uppercase tracking-widest leading-none">Hotline 1 (Logistik &amp; Angkutan)</span>
+                                    <span class="block font-bold text-white text-sm mt-1">0882-1054-9907</span>
+                                </div>
+                            </div>
+                            <a href="https://wa.me/6288210549907?text=Halo%20PT%20Alfatih%20Mitra%20Sentosa,%20saya%20ingin%20berdiskusi%20mengenai%20kebutuhan%20Driver%20dan%20Freelance%20(Daily%20Worker)%20Logistik." target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white p-2 rounded-lg text-xs font-bold flex items-center space-x-1.5 shadow-sm transition">
+                                <i class="fa-brands fa-whatsapp text-sm"></i>
+                                <span class="hidden sm:inline">Hubungi WA</span>
+                            </a>
+                        </div>
+
+                        <!-- Hotline 2 -->
+                        <div class="flex items-center justify-between text-sm text-slate-300 bg-brand-blue/30 p-3.5 rounded-2xl border border-white/5">
+                            <div class="flex items-center space-x-3">
+                                <i class="fa-solid fa-id-card-clip text-brand-accent text-lg"></i>
+                                <div>
+                                    <span class="block text-[10px] text-slate-400 uppercase tracking-widest leading-none">Hotline 2 (SDM &amp; Kemitraan)</span>
+                                    <span class="block font-bold text-white text-sm mt-1">0819-7350-2436</span>
+                                </div>
+                            </div>
+                            <a href="https://wa.me/6281973502436?text=Halo%20PT%20Alfatih%20Mitra%20Sentosa,%20saya%20ingin%20berdiskusi%20mengenai%20Penyediaan%20Karyawan%20Admin,%20Cleaning,%20atau%20Karyawan%20Produksi." target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white p-2 rounded-lg text-xs font-bold flex items-center space-x-1.5 shadow-sm transition">
+                                <i class="fa-brands fa-whatsapp text-sm"></i>
+                                <span class="hidden sm:inline">Hubungi WA</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Copyright and Legals -->
+            <div class="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-400">
+                <p>&copy; 2026 PT Alfatih Mitra Sentosa. All Rights Reserved. Hak Cipta Dilindungi.</p>
+                <div class="flex flex-wrap gap-3 mt-4 md:mt-0 justify-center">
+                    <span class="hover:text-brand-accent cursor-pointer transition">Cleaning Service</span>
+                    <span>&bull;</span>
+                    <span class="hover:text-brand-accent cursor-pointer transition">Daily Worker Logistic</span>
+                    <span>&bull;</span>
+                    <span class="hover:text-brand-accent cursor-pointer transition">Karyawan Admin</span>
+                    <span>&bull;</span>
+                    <span class="hover:text-brand-accent cursor-pointer transition">Driver Logistic</span>
+                    <span>&bull;</span>
+                    <span class="hover:text-brand-accent cursor-pointer transition">Produksi / Packing</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING WA WIDGET FOR QUICK MOBILE ACCESS -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end space-y-2">
+        <!-- Message Bubble -->
+        <div id="wa-bubble" class="bg-white text-slate-800 text-xs font-semibold px-4 py-2.5 rounded-xl shadow-2xl border border-slate-100 flex items-center space-x-2 animate-bounce">
+            <span class="w-2.5 h-2.5 bg-emerald-500 rounded-full inline-block"></span>
+            <span>Butuh Konsultasi? Klik di sini</span>
+            <button onclick="document.getElementById('wa-bubble').classList.add('hidden')" class="text-slate-400 hover:text-slate-700 text-sm font-bold pl-2">&times;</button>
+        </div>
+        
+        <!-- Main WA Floating Button -->
+        <button id="wa-toggle-button" class="bg-emerald-500 hover:bg-emerald-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition duration-300 transform hover:scale-110 active:scale-95">
+            <i class="fa-brands fa-whatsapp text-3xl"></i>
+        </button>
+
+        <!-- Dropdown Options for Hotlines -->
+        <div id="wa-options-box" class="hidden bg-white text-slate-800 rounded-2xl shadow-2xl p-4 border border-slate-100 w-72 space-y-3.5 mb-2 transform origin-bottom-right transition duration-300">
+            <h4 class="font-extrabold text-brand-navy text-xs uppercase tracking-wide border-b border-slate-100 pb-2 flex items-center gap-1.5">
+                <i class="fa-solid fa-comments text-brand-accent"></i>
+                <span>Hubungi Ops WhatsApp</span>
+            </h4>
+            
+            <a href="https://wa.me/6288210549907?text=Halo%20PT%20Alfatih%20Mitra%20Sentosa,%20saya%20ingin%20berkonsultasi%20mengenai%20layanan%20Driver%20dan%20Freelance/Daily%20Worker%20Logistik." target="_blank" class="flex items-center space-x-3 p-2 hover:bg-slate-50 rounded-xl transition">
+                <div class="bg-emerald-100 text-emerald-600 p-2.5 rounded-lg flex items-center justify-center">
+                    <i class="fa-solid fa-truck"></i>
+                </div>
+                <div>
+                    <span class="block text-xs font-bold text-brand-navy">Hotline 1 (Logistik/Drivers/DW)</span>
+                    <span class="block text-[10px] text-slate-400">0882-1054-9907</span>
+                </div>
+            </a>
+
+            <a href="https://wa.me/6281973502436?text=Halo%20PT%20Alfatih%20Mitra%20Sentosa,%20saya%20tertarik%20dengan%20kemitraan%20Penyediaan%20Admin,%20Cleaning,%20dan%20Produksi." target="_blank" class="flex items-center space-x-3 p-2 hover:bg-slate-50 rounded-xl transition">
+                <div class="bg-emerald-100 text-emerald-600 p-2.5 rounded-lg flex items-center justify-center">
+                    <i class="fa-solid fa-briefcase"></i>
+                </div>
+                <div>
+                    <span class="block text-xs font-bold text-brand-navy">Hotline 2 (Kemitraan/Staf)</span>
+                    <span class="block text-[10px] text-slate-400">0819-7350-2436</span>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- INTERACTIVE SCRIPTS -->
+    <script>
+        // MOBILE MENU TOGGLE
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on click of nav items
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // FLOATING WHATSAPP OPTIONS TOGGLE
+        const waToggleButton = document.getElementById('wa-toggle-button');
+        const waOptionsBox = document.getElementById('wa-options-box');
+
+        waToggleButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            waOptionsBox.classList.toggle('hidden');
+        });
+
+        // Close WA options if clicked anywhere else
+        document.addEventListener('click', (e) => {
+            if (!waOptionsBox.contains(e.target) && e.target !== waToggleButton) {
+                waOptionsBox.classList.add('hidden');
+            }
+        });
+
+        // CALCULATOR DYNAMIC ESTIMATOR LOGIC
+        const rangeDw = document.getElementById('range-dw');
+        const rangeDrivers = document.getElementById('range-drivers');
+        const selectStaffType = document.getElementById('select-staff-type');
+
+        const valDw = document.getElementById('val-dw');
+        const valDrivers = document.getElementById('val-drivers');
+
+        const summaryDw = document.getElementById('summary-dw');
+        const summaryDrivers = document.getElementById('summary-drivers');
+        const summaryStaffType = document.getElementById('summary-staff-type');
+        const summaryScale = document.getElementById('summary-scale');
+
+        const btnEstimateWa1 = document.getElementById('btn-estimate-wa-1');
+        const btnEstimateWa2 = document.getElementById('btn-estimate-wa-2');
+
+        function updateEstimates() {
+            const dwVal = parseInt(rangeDw.value);
+            const driversVal = parseInt(rangeDrivers.value);
+            const staffVal = selectStaffType.value;
+
+            // Update range indicators
+            valDw.innerText = `${dwVal} Orang`;
+            valDrivers.innerText = `${driversVal} Orang`;
+
+            // Update Summary Card values
+            summaryDw.innerText = `${dwVal} Personel`;
+            summaryDrivers.innerText = `${driversVal} Personel`;
+            summaryStaffType.innerText = staffVal;
+
+            // Calculate scale based on inputs
+            let scaleScore = dwVal + (driversVal * 3);
+            let scaleText = "Efisien / Kecil";
+            let scaleBg = "bg-green-600";
+
+            if (scaleScore > 35) {
+                scaleText = "Komersial Skala Besar";
+                scaleBg = "bg-red-600";
+            } else if (scaleScore > 12) {
+                scaleText = "Operasional Menengah";
+                scaleBg = "bg-orange-500";
+            }
+
+            summaryScale.innerText = scaleText;
+            summaryScale.className = `text-white font-extrabold text-xs px-3 py-1 rounded-full uppercase ${scaleBg}`;
+        }
+
+        rangeDw.addEventListener('input', updateEstimates);
+        rangeDrivers.addEventListener('input', updateEstimates);
+        selectStaffType.addEventListener('change', updateEstimates);
+
+        // Pre-formatted Whatsapp message dispatch
+        function dispatchWaMessage(phoneNum) {
+            const dwVal = rangeDw.value;
+            const driversVal = rangeDrivers.value;
+            const staffVal = selectStaffType.value;
+            const scaleText = summaryScale.innerText;
+
+            const structuredMessage = `Halo%20PT%20Alfatih%20Mitra%20Sentosa,%20kami%20tertarik%20untuk%20mengajukan%20kebutuhan%20operasional%20dengan%20rincian%20simulasi%20sebagai%20berikut:%0A%0A-%20*Daily%20Worker%20/%20Freelance*:%20${dwVal}%20Orang%0A-%20*Driver%20Logistic*:%20${driversVal}%20Orang%0A-%20*Tambahan%20Staf*:%20${staffVal}%0A-%20*Estimasi%20Skala*:%20${scaleText}%0A%0AMohon%20bantuan%20dan%20informasi%20penawaran%20kerjasama%20lebih%20lanjut.%20Terima%20kasih.`;
+            
+            window.open(`https://wa.me/${phoneNum}?text=${structuredMessage}`, '_blank');
+        }
+
+        btnEstimateWa1.addEventListener('click', () => dispatchWaMessage('6288210549907'));
+        btnEstimateWa2.addEventListener('click', () => dispatchWaMessage('6281973502436'));
+
+        // Initialize values on window load
+        window.onload = function() {
+            updateEstimates();
+        }
+    </script>
+</body>
+</html>
